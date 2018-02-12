@@ -1,0 +1,33 @@
+<div *ngIf = "kingdom === undefined">
+	<span style="color:red">KINGDOM IS UNDEFINED OH NO</span>
+</div>
+<h1>The Kingdom of {{kingdom.name}}!</h1>
+<p>Lead by the glorious {{kingdom.leaderName}}</p>
+
+<h2>Kingdom Stats</h2>
+<div class="pair-container">
+	<div class="pair">
+		<div class="pair-name">Population</div>
+		<div class="pair-value">{{kingdom.population}}</div>
+	</div>
+	<div class="pair">
+		<div class="pair-name"># of Knights</div>
+		<div class="pair-value">{{kingdom.numKnights}}</div>
+	</div>
+	<div class="pair">
+		<div class="pair-name"># of Clerics</div>
+		<div class="pair-value">{{kingdom.numClerics}}</div>
+	</div>
+	<div class="pair">
+		<div class="pair-name">Happiness</div>
+		<div class="pair-value">{{kingdom.happiness()}}</div>
+	</div>
+</div>
+<div *ngIf="kingdom.towns !== undefined" >
+	<h2>Towns in Kingdom</h2>
+	<ul class="nondecorated-list">
+		<li *ngFor="let town of kingdom.towns">
+			{{town.name}}
+		</li>
+	</ul>
+</div>

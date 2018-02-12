@@ -1,0 +1,20 @@
+<h1>Create a Kingdom</h1>
+<div class="container">
+	<div class="pair">
+		<div class="pair-name">
+			Kingdom Name
+		</div>
+		<div class="pair-value">
+			<input [(ngModel)]="creator.name" placeholder="name"/>
+		</div>
+	</div>
+	<div class="pair">
+		<div class="pair-name">
+			Your Leader Name
+		</div>
+		<div class="pair-value">
+			<input [(ngModel)]="creator.leaderName" placeholder="your name"/>
+		</div>
+	</div>
+</div>
+<button routerLink="/game" (click)="saveData()">Start Your Reign</button>
