@@ -1,0 +1,24 @@
+.pair-container {
+	height: auto;
+	border: 1px solid black;
+	width: 50%;
+}
+
+.pair {
+	width: auto;
+	border-bottom: 1px solid black;
+}
+
+.pair-name {
+	display:inline-block;
+	font-weight: bold;
+}
+
+.pair-value {
+	display:inline-block;
+	padding-left: 100px;
+}
+
+.nondecorated-list {
+	list-style: none;
+}

@@ -12,6 +12,7 @@ import { DataService } from './data.service';
 import { MenuComponent } from './menu/menu.component';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { GameService } from './game.service';
+import { GamestatsComponent } from './gamestats/gamestats.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { GameService } from './game.service';
     KingdomCreatorComponent,
     MenuComponent,
     GameScreenComponent,
+    GamestatsComponent,
       ],
   imports: [
     BrowserModule,
