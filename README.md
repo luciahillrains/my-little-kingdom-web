@@ -3,11 +3,11 @@
 How I Learned to Stop Worrying And Love My Dumb Rubiks Cube
 
 ## To Do
-* Plague
-   * Lowers population by 500.
-* Challenge levels
-   * Choose your level when creating kingdom. 
-      * Jesters, Inquisitions (plague but extra unhappiness cost), Town Happiness, etc.
+* Concepts of years, action points, random events
+* Send Knights on Missions
+* Take over opposing towns
+* Population based on town size
+* etc etc etc
 * Mobile Friendly UI
 * Pretty UI
 * Acheivements
