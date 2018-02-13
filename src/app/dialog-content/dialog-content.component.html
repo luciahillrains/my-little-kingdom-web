@@ -1,0 +1,25 @@
+<div *ngIf="info.content === 'works'">
+  dialog-content works!
+</div>
+<div *ngIf="info.content === 'visittown'">
+	<p>Please choose a town to visit.</p>
+	<div *ngFor="let town of towns; let idx = index">
+		<label>
+			<input type="radio" name="towns" (change)="onTownChange(idx)"/>
+			{{town.name}}
+		</label>
+	</div>
+	<button (click)="doTownVisit()">Visit</button>
+</div>
+<div *ngIf="info.content === 'visitresults'">
+	<div>
+		{{tvr.content}}
+	</div>
+	<div>
+		<ul class="nondecorated-list">
+			<li *ngFor="let result of tvr.results()">
+				{{result}}
+			</li>
+		</ul>
+	</div>
+</div>

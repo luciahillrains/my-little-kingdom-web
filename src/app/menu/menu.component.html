@@ -5,10 +5,10 @@
 	<button (click)="holdConference()" [disabled]="!canHoldConference()">Hold a Conference</button>
 </div>
 <div>
-	<button>Hold a Celebration</button>
+	<button (click)="holdCelebration()" [disabled]="!canHoldCelebration()">Hold a Celebration</button>
 </div>
 <div>
-	<button>Visit a Town</button>
+	<button (click)="visitTown()">Visit a Town</button>
 </div>
 <div>
 	<button>Send Knights On a Venture</button>

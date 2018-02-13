@@ -13,7 +13,9 @@ import { MenuComponent } from './menu/menu.component';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { GameService } from './game.service';
 import { GamestatsComponent } from './gamestats/gamestats.component';
-import { MessageService } from './message-service.service';
+import { DialogService } from './dialog.service';
+import { DialogComponent } from './dialog/dialog.component';
+import { DialogContentComponent } from './dialog-content/dialog-content.component';
 
 
 @NgModule({
@@ -25,13 +27,15 @@ import { MessageService } from './message-service.service';
     MenuComponent,
     GameScreenComponent,
     GamestatsComponent,
+    DialogComponent,
+    DialogContentComponent,
       ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [DataService, GameService, MessageService],
+  providers: [DataService, GameService, DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

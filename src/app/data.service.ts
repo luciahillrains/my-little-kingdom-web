@@ -8,7 +8,7 @@ import {GameStats} from './gamestats';
 export class DataService {
 	kingdom:Kingdom = new Kingdom();
 	stats:GameStats = new GameStats();
-
+	selectedTown:Town = new Town();
   constructor() { 
   	this.kingdom = this.getKingdom();
   	this.stats = this.getStats();
@@ -60,7 +60,7 @@ export class DataService {
   		kingdom.towns.push(town);
   	}
   	return kingdom;
-  }
+  } 
 
   getStats() {
   	this.stats = this.getStatsFromJSON(localStorage.stats);
