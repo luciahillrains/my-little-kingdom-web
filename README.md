@@ -10,6 +10,7 @@ How I Learned to Stop Worrying And Love My Dumb Rubiks Cube
       * Jesters, Inquisitions (plague but extra unhappiness cost), Town Happiness, etc.
 * Mobile Friendly UI
 * Pretty UI
+* Acheivements
 
 ## Play Today
 https://my-little-kingdom-alpha.firebaseapp.com
