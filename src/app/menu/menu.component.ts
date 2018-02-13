@@ -17,21 +17,21 @@ export class MenuComponent implements OnInit {
   hireClergy() {
   	var kingdom = this.dataService.getData();
   	kingdom = this.gameService.hireNewClergy(kingdom);
-  	this.dataService.saveData(kingdom);
+  	//this.dataService.saveData(kingdom);
   	this.refreshPage();
   }
 
   hireKnights() {
   	var kingdom = this.dataService.getData();
   	kingdom = this.gameService.hireNewKnights(kingdom);
-  	this.dataService.saveData(kingdom);
+  	//this.dataService.saveData(kingdom);
   	this.refreshPage();
   }
 
   initiateFeast() {
   	var kingdom = this.dataService.getData();
   	kingdom = this.gameService.initiateFeast(kingdom);
-  	this.dataService.saveData(kingdom);
+  	//this.dataService.saveData(kingdom);
   	this.refreshPage();
   }
 

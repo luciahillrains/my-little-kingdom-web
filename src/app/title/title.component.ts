@@ -11,7 +11,7 @@ export class TitleComponent implements OnInit {
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-  	this.hasData = this.dataService.hasData();
+  	this.hasData = this.dataService.hasKingdom();
   }
 
 }

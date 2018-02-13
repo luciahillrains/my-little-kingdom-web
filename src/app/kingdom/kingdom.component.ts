@@ -15,7 +15,7 @@ export class KingdomComponent implements OnInit {
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-  	  	this.kingdom = this.dataService.getData();
+  	  	this.kingdom = this.dataService.getKingdom();
   }
 
 }

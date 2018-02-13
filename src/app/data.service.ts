@@ -3,18 +3,19 @@ import {Creator} from './creator';
 import {Kingdom} from './kingdom';
 import {Town} from './town';
 import {MOCKTOWNS} from './mock-towns';
+import {GameStats} from './gamestats';
 @Injectable()
 export class DataService {
 	kingdom:Kingdom;
 
   constructor() { }
 
-  getData() {
-  	this.kingdom = this.getKingdom(localStorage.kingdom);
+  getKingdom() {
+  	this.kingdom = this.getKingdomFromJSON(localStorage.kingdom);
   	return this.kingdom;
   }
 
-  hasData() {
+  hasKingdom() {
   	return localStorage.kingdom !== undefined;
   }
 
@@ -27,13 +28,19 @@ export class DataService {
   	var numTowns = Math.floor(Math.random() * 4) + 1;
   	newKingdom.towns = this.getTownArray(numTowns);
   	localStorage.kingdom = JSON.stringify(newKingdom);
+  	this.createNewGameStats();
   }
 
-  saveData(kingdom:Kingdom) {
+  private createNewGameStats() {
+  	var newStat:GameStats = new GameStats();
+  	localStorage.stats = JSON.stringify(newStat);
+  }
+
+  saveKingdom(kingdom:Kingdom) {
   	localStorage.kingdom = JSON.stringify(kingdom);
   }
 
-  getKingdom(kingdomScript) {
+  private getKingdomFromJSON(kingdomScript) {
   	var kingdom:Kingdom = new Kingdom();
   	var raw = JSON.parse(kingdomScript);
   	kingdom.name = raw.name;
@@ -51,7 +58,24 @@ export class DataService {
   	return kingdom;
   }
 
-  getTownArray(size:number) {
+  getStats() {
+  	var stats = this.getStatsFromJSON(localStorage.stats);
+  	return stats;
+  }
+
+  private getStatsFromJSON(statsScript) {
+  	var stats:GameStats = new GameStats();
+  	var raw = JSON.parse(statsScript);
+  	stats.years = raw.years;
+  	stats.ap = raw.ap;
+  	return stats;
+  }
+
+  saveStats(stats) {
+  	localStorage.stats = JSON.stringify(stats);
+  }
+
+  private getTownArray(size:number) {
   	var towns:Town[] = [];
   	for(var i = 0; i < size; i++) {
   		var index = Math.floor(Math.random() * MOCKTOWNS.length);

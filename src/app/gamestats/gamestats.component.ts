@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../data.service';
 import { GameStats} from '../gamestats';
 @Component({
   selector: 'app-gamestats',
@@ -7,9 +8,11 @@ import { GameStats} from '../gamestats';
 })
 export class GamestatsComponent implements OnInit {
 	stats:GameStats = new GameStats();
-  constructor() { }
+
+  constructor(private dataService:DataService) { }
 
   ngOnInit() {
+  	this.stats = this.dataService.getStats();
   }
 
 }
