@@ -6,7 +6,7 @@ export class GameService {
   constructor() { }
   NUM_HIRED:number = 5;
   NUM_LOST:number = 3;
-
+  NUM_POP_GAIN:number = 500;
   hireNewClergy(kingdom:Kingdom) {
   	var newClergy = this.NUM_HIRED;
   	var deltaKnights = this.NUM_LOST;

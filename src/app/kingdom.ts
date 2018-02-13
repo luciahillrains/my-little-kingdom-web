@@ -21,6 +21,9 @@ export class Kingdom {
 		var knightScore = 33;
 		var lowBound = Math.floor(this.population * .1);
 		var highBound = Math.floor(this.population * .3);
+		//extra happy adds extra points to knight & clergy score
+		//if baseHappiness is low.
+		var extraHappy = Math.floor((34 - this.baseHappiness)/2);
 		if(this.numKnights < lowBound) {
 			knightScore = lowBound - this.numKnights;
 		}
@@ -44,6 +47,8 @@ export class Kingdom {
 		if(clergyScore > 33) {
 			clergyScore = clergyScore % 33;
 		}
+		knightScore = knightScore + extraHappy;
+		clergyScore = clergyScore + extraHappy;
 
 		//the other third is random and is created at kingdom birth (baseHappiness);
 		return knightScore + clergyScore + this.baseHappiness;
