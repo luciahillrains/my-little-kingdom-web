@@ -1,8 +1,8 @@
 # My Little Kingdom Web
-##or
+## or
 How I Learned to Stop Worrying And Love My Dumb Rubiks Cube
 
-##To Do
+## To Do
 * Plague
    * Lowers population by 500.
 * Challenge levels
@@ -10,3 +10,6 @@ How I Learned to Stop Worrying And Love My Dumb Rubiks Cube
       * Jesters, Inquisitions (plague but extra unhappiness cost), Town Happiness, etc.
 * Mobile Friendly UI
 * Pretty UI
+
+## Play Today
+https://my-little-kingdom-alpha.firebaseapp.com
