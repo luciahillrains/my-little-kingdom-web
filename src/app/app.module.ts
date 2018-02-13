@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { GameService } from './game.service';
 import { GamestatsComponent } from './gamestats/gamestats.component';
+import { MessageService } from './message-service.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { GamestatsComponent } from './gamestats/gamestats.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [DataService, GameService],
+  providers: [DataService, GameService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

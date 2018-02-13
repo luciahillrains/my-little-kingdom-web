@@ -6,9 +6,13 @@ import {MOCKTOWNS} from './mock-towns';
 import {GameStats} from './gamestats';
 @Injectable()
 export class DataService {
-	kingdom:Kingdom;
+	kingdom:Kingdom = new Kingdom();
+	stats:GameStats = new GameStats();
 
-  constructor() { }
+  constructor() { 
+  	this.kingdom = this.getKingdom();
+  	this.stats = this.getStats();
+  }
 
   getKingdom() {
   	this.kingdom = this.getKingdomFromJSON(localStorage.kingdom);
@@ -36,8 +40,8 @@ export class DataService {
   	localStorage.stats = JSON.stringify(newStat);
   }
 
-  saveKingdom(kingdom:Kingdom) {
-  	localStorage.kingdom = JSON.stringify(kingdom);
+  saveKingdom() {
+  	localStorage.kingdom = JSON.stringify(this.kingdom);
   }
 
   private getKingdomFromJSON(kingdomScript) {
@@ -59,8 +63,8 @@ export class DataService {
   }
 
   getStats() {
-  	var stats = this.getStatsFromJSON(localStorage.stats);
-  	return stats;
+  	this.stats = this.getStatsFromJSON(localStorage.stats);
+  	return this.stats;
   }
 
   private getStatsFromJSON(statsScript) {
@@ -71,8 +75,8 @@ export class DataService {
   	return stats;
   }
 
-  saveStats(stats) {
-  	localStorage.stats = JSON.stringify(stats);
+  saveStats() {
+  	localStorage.stats = JSON.stringify(this.stats);
   }
 
   private getTownArray(size:number) {

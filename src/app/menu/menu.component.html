@@ -1,8 +1,8 @@
 <div>
-	<button>Hold a Competition</button>
+	<button (click)="holdCompetition()" [disabled]="!canHoldCompetition()">Hold a Competition</button>
 </div>
 <div>
-	<button>Hold a Conference</button>
+	<button (click)="holdConference()" [disabled]="!canHoldConference()">Hold a Conference</button>
 </div>
 <div>
 	<button>Hold a Celebration</button>

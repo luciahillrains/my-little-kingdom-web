@@ -14,29 +14,22 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  hireClergy() {
-  	var kingdom = this.dataService.getData();
-  	kingdom = this.gameService.hireNewClergy(kingdom);
-  	//this.dataService.saveData(kingdom);
-  	this.refreshPage();
+  holdCompetition() {
+  	this.gameService.holdCompetition();
   }
 
-  hireKnights() {
-  	var kingdom = this.dataService.getData();
-  	kingdom = this.gameService.hireNewKnights(kingdom);
-  	//this.dataService.saveData(kingdom);
-  	this.refreshPage();
+  holdConference() {
+  	this.gameService.holdConference();
   }
 
-  initiateFeast() {
-  	var kingdom = this.dataService.getData();
-  	kingdom = this.gameService.initiateFeast(kingdom);
-  	//this.dataService.saveData(kingdom);
-  	this.refreshPage();
+  canHoldCompetition() {
+  	var kingdom = this.dataService.kingdom;
+  	return kingdom.numClerics > 0;
   }
 
-  refreshPage() {
-  	window.location.reload();
+  canHoldConference() {
+  	var kingdom = this.dataService.kingdom;
+  	return kingdom.numKnights > 0;
   }
 
 }
