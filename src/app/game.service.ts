@@ -4,25 +4,27 @@ import {Kingdom} from './kingdom';
 export class GameService {
 
   constructor() { }
+  NUM_HIRED:number = 5;
+  NUM_LOST:number = 3;
 
   hireNewClergy(kingdom:Kingdom) {
-  	var newClergy = Math.floor(Math.random() * 5) + 1;
-  	var deltaKnights = Math.floor(Math.random() * newClergy);
+  	var newClergy = this.NUM_HIRED;
+  	var deltaKnights = this.NUM_LOST;
   	kingdom.numClerics = kingdom.numClerics + newClergy;
   	kingdom.numKnights = kingdom.numKnights - deltaKnights;
   	return kingdom;
   }
 
   hireNewKnights(kingdom:Kingdom) {
-  	var newKnights = Math.floor(Math.random() * 5) + 1;
-  	var deltaClergy = Math.floor(Math.random() * newKnights);
+  	var newKnights = this.NUM_HIRED;
+  	var deltaClergy = this.NUM_LOST;
   	kingdom.numKnights = kingdom.numKnights + newKnights;
   	kingdom.numClerics = kingdom.numClerics - deltaClergy;
   	return kingdom;
   }
 
   initiateFeast(kingdom:Kingdom) {
-  	var newPop = Math.floor(Math.random() * 1000) + 10;
+  	var newPop = 500;
   	kingdom.population = kingdom.population + newPop;
   	return kingdom;
   }
