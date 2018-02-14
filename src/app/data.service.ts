@@ -49,7 +49,6 @@ export class DataService {
   	var raw = JSON.parse(kingdomScript);
   	kingdom.name = raw.name;
   	kingdom.leaderName = raw.leaderName;
-  	kingdom.population = raw.population;
   	kingdom.numKnights = raw.numKnights;
   	kingdom.numClerics = raw.numClerics;
   	kingdom.baseHappiness = raw.baseHappiness;
