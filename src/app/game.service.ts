@@ -43,6 +43,7 @@ export class GameService {
   doTownVisit() {
   	var selectedTown = this.dataService.selectedTown;
   	var tvr = new TownVisitResults(selectedTown.name);
+  	this.dataService.affectTownFromVisit(tvr);
   	this.handleStats();
   	return tvr;
   }

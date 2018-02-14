@@ -90,5 +90,11 @@ export class DataService {
   	return towns;
   }
 
+  affectTownFromVisit(tvr:TownVisitResult) {
+  	this.selectedTown.baseHappiness += tvr.happinessDelta;
+  	this.selectedTown.population += tvr.populationDelta;
+  	this.selectedTown.tourismDelta += tvr.tourismDelta;
+  }
+
 
 }
