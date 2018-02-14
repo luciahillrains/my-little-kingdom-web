@@ -15,10 +15,12 @@ export class DialogContentComponent implements OnInit {
 	info:DialogInfo;
 	  towns:Town[];
 	  tvr:TownVisitResults;
+	  fr:FeastResults;
   constructor(private dialogService:DialogService, private dataService:DataService, private gameService:GameService) { }
   ngOnInit() {
   	this.info = this.dialogService.dialogInfo;
   	this.towns = this.dataService.kingdom.towns;
+  	this.fr = this.dataService.feastResults;
   }
 
   onTownChange(idx) {

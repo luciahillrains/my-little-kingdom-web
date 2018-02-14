@@ -4,11 +4,13 @@ import {Kingdom} from './kingdom';
 import {Town} from './town';
 import {MOCKTOWNS} from './mock-towns';
 import {GameStats} from './gamestats';
+import {FeastResults} from './feastresult';
 @Injectable()
 export class DataService {
 	kingdom:Kingdom = new Kingdom();
 	stats:GameStats = new GameStats();
 	selectedTown:Town = new Town("");
+	feastResults:FeastResults = new FeastResults(0);
   constructor() { 
   	this.kingdom = this.getKingdom();
   	this.stats = this.getStats();
@@ -27,10 +29,11 @@ export class DataService {
   	var newKingdom:Kingdom = new Kingdom();
   	newKingdom.name = creator.name;
   	newKingdom.leaderName = creator.leaderName;
-  	newKingdom.setVitals();
   	newKingdom.towns = [];
   	var numTowns = Math.floor(Math.random() * 4) + 1;
   	newKingdom.towns = this.getTownArray(numTowns);
+  	newKingdom.setVitals();
+
   	localStorage.kingdom = JSON.stringify(newKingdom);
   	this.createNewGameStats();
   }
@@ -94,6 +97,28 @@ export class DataService {
   	this.selectedTown.baseHappiness += tvr.happinessDelta;
   	this.selectedTown.population += tvr.populationDelta;
   	this.selectedTown.tourismDelta += tvr.tourismDelta;
+  }
+
+  touristsComeAndGo() {
+  	var towns = this.kingdom.towns;
+  	for(var town of towns) {
+  		town.population += town.tourism;
+  		if(town.population <= 0) {
+  			town.population = 0;
+  		}
+  		town.generateTourism();
+  	}
+  }
+
+  setCelebrationResults() {
+  	var towns = this.kingdom.towns;
+  	var total = 0;
+  	for(var town of towns) {
+  		var basePD = Math.floor((Math.random() * 1000)/towns.length);
+  		town.population += basePD;
+  		total += basePD;
+  	}
+  	this.feastResults.total = total;
   }
 
 

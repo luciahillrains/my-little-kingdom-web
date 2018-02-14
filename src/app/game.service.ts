@@ -15,10 +15,12 @@ export class GameService {
   		stats.ap = 12;
   		stats.years = stats.years+1;
   	}
+  	this.dataService.touristsComeAndGo();
   	this.dataService.saveStats();
   }
   holdCompetition() {
   	var kingdom = this.dataService.kingdom;
+  
   	kingdom.numKnights = kingdom.numKnights + this.NUM_HIRED;
   	kingdom.numClerics = kingdom.numClerics - this.NUM_LOST;
   	this.handleStats();
@@ -35,7 +37,7 @@ export class GameService {
 
   holdCelebration() {
   	var kingdom = this.dataService.kingdom;
-  	kingdom.population = kingdom.population + this.NUM_POP_INCREASE;
+  	this.dataService.setCelebrationResults();
   	this.handleStats();
   	this.dataService.saveKingdom();
   }
