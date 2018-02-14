@@ -28,7 +28,12 @@
 	<h2>Towns in Kingdom</h2>
 	<ul class="nondecorated-list">
 		<li *ngFor="let town of kingdom.towns">
-			{{town.name}}
+			<strong>{{town.name}}</strong>
+			<ul class="nondecorated-list horizontal-3">
+				<li>Population: {{town.population}}</li>
+				<li>Happiness: {{town.getTotalHappiness(kingdom.numKnights, kingdom.numClerics)}}</li>
+				<li>Tourism Factor: {{town.tourism}}</li>
+			</ul>
 		</li>
 	</ul>
 </div>

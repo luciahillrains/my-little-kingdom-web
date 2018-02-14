@@ -22,3 +22,14 @@
 .nondecorated-list {
 	list-style: none;
 }
+
+ul.horizontal-3 {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+
+ul.horizontal-3 li {
+	display: inline-block;
+}

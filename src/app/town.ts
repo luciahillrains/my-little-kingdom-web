@@ -17,18 +17,18 @@ export class Town {
 	}
 
 	getTotalHappiness(knightPop:number, clergyPop:number) {
-		var happy = happiness;
+		var happy = this.baseHappiness;
 		if(happy > 33) {
 			happy = 33;
 		}
-		happy = happy + calculateHappinessFromKnights(knightPop);
-		happy = happy + calculateHappinessFromClergy(clergyPop);
+		happy = happy + this.calculateHappinessFromKnights(knightPop);
+		happy = happy + this.calculateHappinessFromClergy(clergyPop);
 		return happy;
 	}
 		
 	calculateHappinessFromKnights(knightPop) {
 		var h = 0;
-		var knightPerPop = Math.round(this.population/knightPop);
+		var knightsPerPop = Math.round(this.population/knightPop);
 
 		if(Math.round(knightsPerPop) === 5) {
 			h = 33;
@@ -47,10 +47,10 @@ export class Town {
 		if(Math.round(clergyPerPop) == 2) {
 			h = 33;
 		}
-		if(knightsPerPop < 2) {
+		if(clergyPerPop < 2) {
 			h = 6;
 		}
-		if(knightsPerPop > 2) {
+		if(clergyPerPop > 2) {
 			h = 6;
 		}
 		return h;
