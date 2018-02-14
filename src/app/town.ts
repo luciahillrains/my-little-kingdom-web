@@ -8,6 +8,12 @@ export class Town {
 		this.name = townName;
 		this.population = Math.floor(Math.random() * 1000) + 50;
 		this.baseHappiness = Math.floor(Math.random() * 33) + 1;
+		this.tourism = Math.floor(Math.random() * 10);
+		if(this.tourism > 5) {
+			this.tourism = this.tourism - 5;
+		} else {
+			this.tourism = this.tourism - 10;
+		}
 	}
 
 	getTotalHappiness(knightPop:number, clergyPop:number) {
