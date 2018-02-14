@@ -83,7 +83,7 @@ export class DataService {
   	var towns:Town[] = [];
   	for(var i = 0; i < size; i++) {
   		var index = Math.floor(Math.random() * MOCKTOWNS.length);
-  		towns.push(MOCKTOWNS[index]);
+  		towns.push(new Town(MOCKTOWNS[index]));
   	}
   	return towns;
   }
