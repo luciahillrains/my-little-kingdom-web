@@ -1,10 +1,10 @@
 export class Town {
 	name:string;
-	happiness:number;
+	baseHappiness:number;
 	population:number;
 	tourism:number;
 
-	constructor(townName:string, knightPop:number, clergyPop:number) {
+	constructor(townName:string) {
 		this.name = townName;
 		this.population = Math.floor(Math.random() * 1000) + 50;
 		this.baseHappiness = Math.floor(Math.random() * 33) + 1;

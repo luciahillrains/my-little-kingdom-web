@@ -8,7 +8,7 @@ import {GameStats} from './gamestats';
 export class DataService {
 	kingdom:Kingdom = new Kingdom();
 	stats:GameStats = new GameStats();
-	selectedTown:Town = new Town();
+	selectedTown:Town = new Town("");
   constructor() { 
   	this.kingdom = this.getKingdom();
   	this.stats = this.getStats();
@@ -55,8 +55,11 @@ export class DataService {
   	kingdom.baseHappiness = raw.baseHappiness;
   	kingdom.towns = [];
   	for(var i = 0; i < raw.towns.length; i++) {
-  		var town:Town = new Town();
+  		var town:Town = new Town("");
   		town.name = raw.towns[i].name;
+  		town.population = raw.towns[i].population;
+  		town.baseHappiness = raw.towns[i].baseHappiness;
+  		town.tourism = raw.towns[i].tourism;
   		kingdom.towns.push(town);
   	}
   	return kingdom;
